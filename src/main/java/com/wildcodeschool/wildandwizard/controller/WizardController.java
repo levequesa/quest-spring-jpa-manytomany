@@ -1,9 +1,11 @@
 package com.wildcodeschool.wildandwizard.controller;
 
-import com.wildcodeschool.wildandwizard.entity.Course;
-import com.wildcodeschool.wildandwizard.entity.Wizard;
-import com.wildcodeschool.wildandwizard.repository.CourseRepository;
-import com.wildcodeschool.wildandwizard.repository.WizardRepository;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import com.wildcodeschool.wildandwizard.entity.Course;
+import com.wildcodeschool.wildandwizard.entity.Wizard;
+import com.wildcodeschool.wildandwizard.repository.CourseRepository;
+import com.wildcodeschool.wildandwizard.repository.WizardRepository;
 
 @Controller
 public class WizardController {
@@ -24,8 +25,8 @@ public class WizardController {
     private CourseRepository courseRepository;
 
     @Autowired
-    private WizardRepository wizardRepository;
-
+    private WizardRepository wizardRepository; 
+    
     @GetMapping("/")
     public String getWizards(Model out) {
 
